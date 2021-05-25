@@ -3,6 +3,4 @@
 [ext_resource path="res://style/fonts/13217.ttf" type="DynamicFontData" id=1]
 
 [resource]
-size = 25
-outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 1 )

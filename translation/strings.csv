@@ -1,2 +1,6 @@
 id,ru,en
-TEST,тест,test
+START_NEW_GAME,Начать новую игру,Start new game
+CONTINUE_GAME,Продолжить игру,Continue game
+SETTINGS,Настройки,Settings
+EXIT,Выйти,Exit
+OK,Хорошо,Ok

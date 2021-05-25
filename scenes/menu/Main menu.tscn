@@ -5,9 +5,9 @@
 [node name="Main menu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 0.840881
+margin_left = -0.159119
 margin_top = 1.68321
-margin_right = 0.84082
+margin_right = -0.15918
 margin_bottom = 1.68329
 theme = ExtResource( 1 )
 __meta__ = {
@@ -28,18 +28,28 @@ __meta__ = {
 }
 
 [node name="StartButton" type="Button" parent="Option buttons"]
-margin_right = 240.0
-margin_bottom = 32.0
-text = "TEST"
+margin_right = 264.0
+margin_bottom = 49.0
+text = "START_NEW_GAME"
 
 [node name="SetingsButton" type="Button" parent="Option buttons"]
-margin_top = 36.0
-margin_right = 240.0
-margin_bottom = 68.0
-text = "Настройки"
+margin_top = 53.0
+margin_right = 264.0
+margin_bottom = 102.0
+text = "SETTINGS"
 
 [node name="ExitButton" type="Button" parent="Option buttons"]
-margin_top = 72.0
-margin_right = 240.0
-margin_bottom = 104.0
-text = "Выйти"
+margin_top = 106.0
+margin_right = 264.0
+margin_bottom = 155.0
+text = "EXIT"
+
+[node name="TextEdit" type="TextEdit" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -8.99997
+margin_top = -148.0
+margin_right = 453.0
+margin_bottom = 139.0
