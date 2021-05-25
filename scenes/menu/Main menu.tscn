@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://style/default_theme.tres" type="Theme" id=1]
+[ext_resource path="res://sprites/o243h.png" type="Texture" id=2]
 
 [node name="Main menu" type="Control"]
 anchor_right = 1.0
@@ -14,42 +15,50 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Option buttons" type="VBoxContainer" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -362.0
-margin_top = -150.0
-margin_right = -122.0
-margin_bottom = 150.0
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 2 )
+expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="StartButton" type="Button" parent="Option buttons"]
-margin_right = 264.0
+[node name="PanelContainer" type="PanelContainer" parent="."]
+anchor_left = 0.3
+anchor_top = 0.5
+anchor_right = 0.3
+anchor_bottom = 0.5
+margin_left = -125.28
+margin_top = -175.0
+margin_right = 125.0
+margin_bottom = 176.0
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Option buttons" type="VBoxContainer" parent="PanelContainer"]
+margin_left = 9.0
+margin_top = 9.0
+margin_right = 241.28
+margin_bottom = 342.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StartButton" type="Button" parent="PanelContainer/Option buttons"]
+margin_right = 232.0
 margin_bottom = 49.0
 text = "START_NEW_GAME"
 
-[node name="SetingsButton" type="Button" parent="Option buttons"]
+[node name="SetingsButton" type="Button" parent="PanelContainer/Option buttons"]
 margin_top = 53.0
-margin_right = 264.0
+margin_right = 232.0
 margin_bottom = 102.0
 text = "SETTINGS"
 
-[node name="ExitButton" type="Button" parent="Option buttons"]
+[node name="ExitButton" type="Button" parent="PanelContainer/Option buttons"]
 margin_top = 106.0
-margin_right = 264.0
+margin_right = 232.0
 margin_bottom = 155.0
 text = "EXIT"
-
-[node name="TextEdit" type="TextEdit" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -8.99997
-margin_top = -148.0
-margin_right = 453.0
-margin_bottom = 139.0
