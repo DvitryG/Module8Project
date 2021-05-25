@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="Negatio Negationem"
-run/main_scene="res://scenes/menu/Main menu.tscn"
+run/main_scene="res://scenes/menu/MainMenu.tscn"
 config/icon="res://icon.png"
 
 [locale]
