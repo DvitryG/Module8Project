@@ -1,0 +1,65 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://style/default_theme.tres" type="Theme" id=1]
+[ext_resource path="res://scripts/menu/SettingsMenu.gd" type="Script" id=2]
+
+[node name="SettingsMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MainPanel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HeadPanel" type="Panel" parent="MainPanel"]
+anchor_right = 1.0
+anchor_bottom = 0.1
+margin_left = 9.0
+margin_top = 9.0
+margin_right = -9.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackButton" type="Button" parent="MainPanel/HeadPanel"]
+anchor_right = 0.1
+anchor_bottom = 1.0
+margin_right = 0.400002
+text = "BACK"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HeadLabel" type="Label" parent="MainPanel/HeadPanel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -37.5
+margin_top = -15.5
+margin_right = 37.5
+margin_bottom = 15.5
+text = "SETTINGS"
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SettingsContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 9.0
+margin_top = 61.0
+margin_right = -9.0
+margin_bottom = -9.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
