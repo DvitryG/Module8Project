@@ -2,10 +2,10 @@ extends Control
 
 
 func _ready():
-	$MainPanel/HeadPanel/BackButton.connect("pressed", self, "goBack")
+	$MainPanel/HeadPanel/BackButton.connect("pressed", self, "back")
 	pass
 
-func goBack():
+func back():
 	# пока только в главное меню
 	get_tree().change_scene("res://scenes/menu/MainMenu.tscn") 
 	pass
