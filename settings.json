@@ -1,1 +1,1 @@
-{"fullscreen":false,"keys":{"keyGamePause":16777217,"keyTimePause":32},"resolution":{"height":768,"width":1024},"volumeLevel":{"effectsMute":false,"effectsVolume":2000,"masterMute":false,"masterVolume":2000,"musicMute":false,"musicVolume":2000}}
+{"fullscreen":true,"keys":{"keyGamePause":16777217,"keyTimePause":32},"resolution":{"height":1080,"width":1920},"volumeLevel":{"effectsMute":true,"effectsVolume":1340,"masterMute":false,"masterVolume":100,"musicMute":true,"musicVolume":93}}

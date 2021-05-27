@@ -5,8 +5,13 @@ func _ready():
 	$MainPanel/HeadPanel/BackButton.connect("pressed", self, "back")
 	$MainPanel/SettingsContainer/ResolutionOptions.connect("item_selected", self, "resolution")
 	$MainPanel/SettingsContainer/FullscreenCheck.connect("toggled", self, "fullscreen")
+	$MainPanel/SettingsContainer/MaVPanel/MaVSlider.connect("value_changed", self, "setMasterVolume")
+	$MainPanel/SettingsContainer/MuVPanel/MuVSlider.connect("value_changed", self, "setMusicVolume")
+	$MainPanel/SettingsContainer/EVPanel/EVSlider.connect("value_changed", self, "setEffectsVolume")
 	
 	addResolutionItems()
+	if (Settings.fullscreen):
+		$MainPanel/SettingsContainer/FullscreenCheck.pressed = true
 	
 	pass
 
@@ -61,6 +66,7 @@ func resolution(item):
 			Settings.resWidth = 800
 			Settings.resHeight = 600
 	Settings.resolution()
+	Settings.save_game()
 	
 	pass
 
@@ -70,5 +76,41 @@ func fullscreen(pressed):
 	elif (pressed == false):
 		Settings.fullscreen = false
 	Settings.resolution()
+	Settings.save_game()
 	
+	pass
+
+func setMasterVolume(value):
+	if (value == 0):
+		Settings.masterMute = true
+	else:
+		Settings.masterMute = false
+		Settings.masterVolume = value
+	Settings.set_music_volume()
+	Settings.save_game()
+	pass
+
+func setMusicVolume(value):
+	if (value == 0):
+		Settings.musicMute = true
+	else:
+		Settings.masterMute = false
+		Settings.musicVolume = value
+	Settings.set_music_volume()
+	Settings.save_game()
+	pass
+
+func setEffectsVolume(value):
+	if (value == 0):
+		Settings.effectsMute = true
+	else:
+		Settings.masterMute = false
+		Settings.effectsVolume = value * 20
+	#
+	Settings.save_game()
+	pass
+
+func set_mute_music():
+	#if (Settings.masterVolume == 0 or Settings.musicVolume == 0):
+	#	if ()
 	pass

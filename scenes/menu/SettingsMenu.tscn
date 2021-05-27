@@ -41,6 +41,96 @@ margin_right = 1006.0
 margin_bottom = 102.0
 text = "FULLSCREEN"
 
+[node name="MaVPanel" type="Panel" parent="MainPanel/SettingsContainer"]
+margin_top = 106.0
+margin_right = 1006.0
+margin_bottom = 155.0
+rect_min_size = Vector2( 0, 49 )
+
+[node name="MaVLabel" type="Label" parent="MainPanel/SettingsContainer/MaVPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = 8.0
+margin_right = -835.0
+margin_bottom = -8.0
+text = "MASTER_VOLUME"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MaVSlider" type="HSlider" parent="MainPanel/SettingsContainer/MaVPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 171.0
+margin_top = 8.0
+margin_right = -8.0
+margin_bottom = -8.0
+value = 100.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MuVPanel" type="Panel" parent="MainPanel/SettingsContainer"]
+margin_top = 159.0
+margin_right = 1006.0
+margin_bottom = 208.0
+rect_min_size = Vector2( 0, 49 )
+
+[node name="MuVeLabel" type="Label" parent="MainPanel/SettingsContainer/MuVPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = 8.0
+margin_right = -835.0
+margin_bottom = -8.0
+text = "MUSIC_VOLUME"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MuVSlider" type="HSlider" parent="MainPanel/SettingsContainer/MuVPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 171.0
+margin_top = 8.0
+margin_right = -8.0
+margin_bottom = -8.0
+value = 100.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EVPanel" type="Panel" parent="MainPanel/SettingsContainer"]
+margin_top = 212.0
+margin_right = 1006.0
+margin_bottom = 261.0
+rect_min_size = Vector2( 0, 49 )
+
+[node name="EVLabel" type="Label" parent="MainPanel/SettingsContainer/EVPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = 8.0
+margin_right = -835.0
+margin_bottom = -8.0
+text = "EFFECTS_VOLUME"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EVSlider" type="HSlider" parent="MainPanel/SettingsContainer/EVPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 171.0
+margin_top = 8.0
+margin_right = -8.0
+margin_bottom = -8.0
+value = 100.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="HeadPanel" type="Panel" parent="MainPanel"]
 anchor_right = 1.0
 margin_left = 9.0
@@ -61,14 +151,14 @@ __meta__ = {
 }
 
 [node name="HeadLabel" type="Label" parent="MainPanel/HeadPanel"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -37.5
-margin_top = -15.5
-margin_right = 37.5
-margin_bottom = 15.5
+anchor_left = 0.463
+anchor_top = 0.196
+anchor_right = 0.537
+anchor_bottom = 0.804
+margin_left = -0.278015
+margin_top = 0.00399971
+margin_right = 0.278015
+margin_bottom = -0.00400162
 text = "SETTINGS"
 clip_text = true
 __meta__ = {

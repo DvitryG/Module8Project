@@ -4,17 +4,17 @@ extends Control
 
 const SAVE_PATH = "res://settings.json"
 var settings = {}
-var playMusic = 1
-var playEffects = 1
+#var playMusic = 1
+#var playEffects = 1
 # var newChoice = 1
 var song = load("res://assets/music/Dwarf_fortress.mp3")
 # var menu = true
 
 # Saved
 
-var masterVolume = 2000
-var musicVolume = 2000
-var effectsVolume = 2000
+var masterVolume = 100
+var musicVolume = 100
+var effectsVolume = 100
 
 var masterMute = false
 var musicMute = false
@@ -30,32 +30,19 @@ var keyGamePause = 16777217
 func _ready():
 	load_game()
 	set_music()
+	set_music_volume()
 	resolution()
 	pass 
 
-func _process(delta):
-	
-	if (!$Music.is_playing()):
-		set_music()
-	
-	if (masterVolume > 0 and musicVolume > 0):
-		playMusic = int((masterVolume * musicVolume) / 2000)
+func set_music():
+	if (masterMute == false and musicMute == false):
+		$Music.play()
 	else:
-		playMusic = 1
-	
-	if (masterVolume > 0 and effectsVolume > 0):
-		playEffects = int((masterVolume * effectsVolume) / 2000)
-	else:
-		playEffects = 1
-	
-	$Music.set_max_distance(playMusic)
-	
+		$Music.stop()
 	pass
 
-
-func set_music():
-	$Music.set_stream(song)
-	$Music.play(0.0)
+func set_music_volume():
+	$Music.volume_db = (masterVolume * musicVolume) / 125 - 80
 	pass
 
 func resolution():

@@ -7,3 +7,6 @@ OK,Хорошо,Ok
 BACK,Назад,Back
 RESOLUTION,Разрешение,Resolution
 FULLSCREEN,Полноэкранный режим,Fullscreen
+MASTER_VOLUME,Общая Громкость,Total Volume:
+MUSIC_VOLUME,Громкость музыки:,Music Volume:
+EFFECTS_VOLUME,Громкость эффектов:,Effects Volume:
