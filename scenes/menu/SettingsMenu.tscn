@@ -30,6 +30,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="ResolutionOptions" type="OptionButton" parent="MainPanel/SettingsContainer"]
+margin_right = 1006.0
+margin_bottom = 49.0
+text = "RESOLUTION"
+
+[node name="FullscreenCheck" type="CheckBox" parent="MainPanel/SettingsContainer"]
+margin_top = 53.0
+margin_right = 1006.0
+margin_bottom = 102.0
+text = "FULLSCREEN"
+
 [node name="HeadPanel" type="Panel" parent="MainPanel"]
 anchor_right = 1.0
 margin_left = 9.0
