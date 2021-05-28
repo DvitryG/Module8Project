@@ -5,11 +5,13 @@ func _ready():
 	$MainPanel/HeadPanel/BackButton.connect("pressed", self, "back")
 	$MainPanel/SettingsContainer/ResolutionOptions.connect("item_selected", self, "resolution")
 	$MainPanel/SettingsContainer/FullscreenCheck.connect("toggled", self, "fullscreen")
-	$MainPanel/SettingsContainer/MaVPanel/MaVSlider.connect("value_changed", self, "setMasterVolume")
-	$MainPanel/SettingsContainer/MuVPanel/MuVSlider.connect("value_changed", self, "setMusicVolume")
-	$MainPanel/SettingsContainer/EVPanel/EVSlider.connect("value_changed", self, "setEffectsVolume")
+	$MainPanel/SettingsContainer/MaVPanel/MaVSlider.connect("value_changed", self, "set_master_volume")
+	$MainPanel/SettingsContainer/MuVPanel/MuVSlider.connect("value_changed", self, "set_music_volume")
+	$MainPanel/SettingsContainer/EVPanel/EVSlider.connect("value_changed", self, "set_effects_volume")
+	$MainPanel/SettingsContainer/TPanel/TranslationOptions.connect("item_selected", self, "set_language")
 	
-	addResolutionItems()
+	add_lang_items()
+	add_resolution_items()
 	if (Settings.fullscreen):
 		$MainPanel/SettingsContainer/FullscreenCheck.pressed = true
 	
@@ -24,7 +26,18 @@ func back():
 	get_tree().change_scene("res://scenes/menu/MainMenu.tscn") 
 	pass
 
-func addResolutionItems():
+func add_lang_items():
+	$MainPanel/SettingsContainer/TPanel/TranslationOptions.add_item("English", 0)
+	$MainPanel/SettingsContainer/TPanel/TranslationOptions.add_item("Русский", 1)
+	
+	match Settings.lang:
+		"en":
+			$MainPanel/SettingsContainer/TPanel/TranslationOptions.select(0)
+		"ru":
+			$MainPanel/SettingsContainer/TPanel/TranslationOptions.select(1)
+	pass
+
+func add_resolution_items():
 	$MainPanel/SettingsContainer/ResolutionOptions.add_item("1920 x 1080", 0)
 	$MainPanel/SettingsContainer/ResolutionOptions.add_item("1600 x 900", 1)
 	$MainPanel/SettingsContainer/ResolutionOptions.add_item("1366 x 768", 2)
@@ -46,6 +59,16 @@ func addResolutionItems():
 		Vector2(800,600):
 			$MainPanel/SettingsContainer/ResolutionOptions.select(5)
 	
+	pass
+
+func set_language(item):
+	match item:
+		0:
+			Settings.lang = "en"
+		1:
+			Settings.lang = "ru"
+	Settings.set_language()
+	Settings.save_game()
 	pass
 
 func resolution(item):
@@ -84,7 +107,7 @@ func fullscreen(pressed):
 	
 	pass
 
-func setMasterVolume(value):
+func set_master_volume(value):
 	if (value == 0):
 		Settings.masterMute = true
 		Settings.set_mute_music()
@@ -96,13 +119,11 @@ func setMasterVolume(value):
 			Settings.set_mute_music()
 			Settings.set_mute_effects()
 	
-	#Settings.set_mute_music()
 	Settings.set_music_volume()
-	#Settings.set_mute_effects()
 	Settings.save_game()
 	pass
 
-func setMusicVolume(value):
+func set_music_volume(value):
 	if (value == 0):
 		Settings.musicMute = true
 		Settings.set_mute_music()
@@ -112,12 +133,11 @@ func setMusicVolume(value):
 			Settings.musicMute = false
 			Settings.set_mute_music()
 	
-	#Settings.set_mute_music()
 	Settings.set_music_volume()
 	Settings.save_game()
 	pass
 
-func setEffectsVolume(value):
+func set_effects_volume(value):
 	if (value == 0):
 		Settings.effectsMute = true
 	else:

@@ -30,21 +30,48 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ResolutionOptions" type="OptionButton" parent="MainPanel/SettingsContainer"]
+[node name="TPanel" type="Panel" parent="MainPanel/SettingsContainer"]
 margin_right = 1006.0
 margin_bottom = 49.0
-text = "RESOLUTION"
+rect_min_size = Vector2( 0, 49 )
 
-[node name="FullscreenCheck" type="CheckBox" parent="MainPanel/SettingsContainer"]
+[node name="TLabel" type="Label" parent="MainPanel/SettingsContainer/TPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = 8.0
+margin_right = -835.0
+margin_bottom = -8.0
+text = "LANGUAGE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TranslationOptions" type="OptionButton" parent="MainPanel/SettingsContainer/TPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 171.0
+text = "NONE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ResolutionOptions" type="OptionButton" parent="MainPanel/SettingsContainer"]
 margin_top = 53.0
 margin_right = 1006.0
 margin_bottom = 102.0
-text = "FULLSCREEN"
+text = "RESOLUTION"
 
-[node name="MaVPanel" type="Panel" parent="MainPanel/SettingsContainer"]
+[node name="FullscreenCheck" type="CheckBox" parent="MainPanel/SettingsContainer"]
 margin_top = 106.0
 margin_right = 1006.0
 margin_bottom = 155.0
+text = "FULLSCREEN"
+
+[node name="MaVPanel" type="Panel" parent="MainPanel/SettingsContainer"]
+margin_top = 159.0
+margin_right = 1006.0
+margin_bottom = 208.0
 rect_min_size = Vector2( 0, 49 )
 
 [node name="MaVLabel" type="Label" parent="MainPanel/SettingsContainer/MaVPanel"]
@@ -72,9 +99,9 @@ __meta__ = {
 }
 
 [node name="MuVPanel" type="Panel" parent="MainPanel/SettingsContainer"]
-margin_top = 159.0
+margin_top = 212.0
 margin_right = 1006.0
-margin_bottom = 208.0
+margin_bottom = 261.0
 rect_min_size = Vector2( 0, 49 )
 
 [node name="MuVeLabel" type="Label" parent="MainPanel/SettingsContainer/MuVPanel"]
@@ -102,9 +129,9 @@ __meta__ = {
 }
 
 [node name="EVPanel" type="Panel" parent="MainPanel/SettingsContainer"]
-margin_top = 212.0
+margin_top = 265.0
 margin_right = 1006.0
-margin_bottom = 261.0
+margin_bottom = 314.0
 rect_min_size = Vector2( 0, 49 )
 
 [node name="EVLabel" type="Label" parent="MainPanel/SettingsContainer/EVPanel"]

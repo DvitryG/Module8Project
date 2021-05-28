@@ -12,6 +12,8 @@ var song = load("res://assets/music/Dwarf_fortress.mp3")
 
 # Saved
 
+var lang = "en"
+
 var masterVolume = 100
 var musicVolume = 100
 var effectsVolume = 100
@@ -29,10 +31,15 @@ var keyGamePause = 16777217
 
 func _ready():
 	load_game()
+	set_language()
 	set_mute_music()
 	set_music_volume()
 	resolution()
 	pass 
+
+func set_language():
+	TranslationServer.set_locale(lang)
+	pass
 
 func set_mute_music():
 	if (masterMute == false and musicMute == false):
@@ -65,6 +72,8 @@ func resolution():
 
 func save_game():
 	var settings = {
+		language = lang,
+		
 		resolution = {
 			width = resWidth,
 			height = resHeight
@@ -105,6 +114,8 @@ func load_game():
 	data = parse_json(saveFile.get_as_text())
 	
 	saveFile.close()
+	
+	lang = data['language']
 	
 	masterVolume = data['volumeLevel']['masterVolume']
 	musicVolume = data['volumeLevel']['musicVolume']
