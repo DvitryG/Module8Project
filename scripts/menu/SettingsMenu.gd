@@ -13,6 +13,10 @@ func _ready():
 	if (Settings.fullscreen):
 		$MainPanel/SettingsContainer/FullscreenCheck.pressed = true
 	
+	$MainPanel/SettingsContainer/MaVPanel/MaVSlider.value = Settings.masterVolume
+	$MainPanel/SettingsContainer/MuVPanel/MuVSlider.value = Settings.musicVolume
+	$MainPanel/SettingsContainer/EVPanel/EVSlider.value = Settings.effectsVolume
+	
 	pass
 
 func back():
@@ -83,19 +87,32 @@ func fullscreen(pressed):
 func setMasterVolume(value):
 	if (value == 0):
 		Settings.masterMute = true
+		Settings.set_mute_music()
+		Settings.set_mute_effects()
 	else:
-		Settings.masterMute = false
 		Settings.masterVolume = value
+		if (Settings.masterMute == true):
+			Settings.masterMute = false
+			Settings.set_mute_music()
+			Settings.set_mute_effects()
+	
+	#Settings.set_mute_music()
 	Settings.set_music_volume()
+	#Settings.set_mute_effects()
 	Settings.save_game()
 	pass
 
 func setMusicVolume(value):
 	if (value == 0):
 		Settings.musicMute = true
+		Settings.set_mute_music()
 	else:
-		Settings.masterMute = false
 		Settings.musicVolume = value
+		if (Settings.musicMute == true):
+			Settings.musicMute = false
+			Settings.set_mute_music()
+	
+	#Settings.set_mute_music()
 	Settings.set_music_volume()
 	Settings.save_game()
 	pass
@@ -106,11 +123,7 @@ func setEffectsVolume(value):
 	else:
 		Settings.masterMute = false
 		Settings.effectsVolume = value * 20
-	#
+	
+	Settings.set_mute_effects()
 	Settings.save_game()
-	pass
-
-func set_mute_music():
-	#if (Settings.masterVolume == 0 or Settings.musicVolume == 0):
-	#	if ()
 	pass

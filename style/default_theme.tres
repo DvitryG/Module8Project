@@ -5,7 +5,7 @@
 [ext_resource path="res://style/focus_stylebox.tres" type="StyleBox" id=3]
 [ext_resource path="res://style/hover_stylebox.tres" type="StyleBox" id=4]
 [ext_resource path="res://style/pressed_stylebox.tres" type="StyleBox" id=5]
-[ext_resource path="res://sprites/interface_background.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprites/interface_background.png" type="Texture" id=6]
 
 [sub_resource type="StyleBoxTexture" id=1]
 texture = ExtResource( 6 )

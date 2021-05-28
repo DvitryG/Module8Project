@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/o243h.png-9d50f5155868d30b1c38aa36a87a95fa.stex"
+path="res://.import/interface_background.png-6cde47fc8a39a2bdb1d773d9e1203077.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/o243h.png"
-dest_files=[ "res://.import/o243h.png-9d50f5155868d30b1c38aa36a87a95fa.stex" ]
+source_file="res://assets/sprites/interface_background.png"
+dest_files=[ "res://.import/interface_background.png-6cde47fc8a39a2bdb1d773d9e1203077.stex" ]
 
 [params]
 

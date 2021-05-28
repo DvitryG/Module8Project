@@ -25,7 +25,7 @@ window/stretch/aspect="expand"
 
 [locale]
 
-translations=PoolStringArray( "res://translation/strings.ru.translation", "res://translation/strings.en.translation" )
+translations=PoolStringArray( "res://assets/translation/strings.en.translation", "res://assets/translation/strings.ru.translation" )
 
 [physics]
 

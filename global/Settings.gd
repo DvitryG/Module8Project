@@ -29,20 +29,23 @@ var keyGamePause = 16777217
 
 func _ready():
 	load_game()
-	set_music()
+	set_mute_music()
 	set_music_volume()
 	resolution()
 	pass 
 
-func set_music():
+func set_mute_music():
 	if (masterMute == false and musicMute == false):
 		$Music.play()
 	else:
 		$Music.stop()
 	pass
 
+func set_mute_effects():
+	pass
+
 func set_music_volume():
-	$Music.volume_db = (masterVolume * musicVolume) / 125 - 80
+	$Music.volume_db = (masterVolume * musicVolume) / 200 - 50
 	pass
 
 func resolution():
