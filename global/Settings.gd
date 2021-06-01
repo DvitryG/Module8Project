@@ -7,7 +7,7 @@ var settings = {}
 #var playMusic = 1
 #var playEffects = 1
 # var newChoice = 1
-var song = load("res://assets/music/Dwarf_fortress.mp3")
+var song = load("res://assets/music/tempMusic.mp3")
 # var menu = true
 
 # Saved
@@ -106,7 +106,7 @@ func save_game():
 func load_game():
 	var saveFile = File.new()
 	if (not saveFile.file_exists(SAVE_PATH)):
-		return;
+		save_game()
 	
 	saveFile.open(SAVE_PATH, File.READ)
 	

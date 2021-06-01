@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://global/Settings.gd" type="Script" id=1]
-[ext_resource path="res://assets/music/Dwarf_fortress.mp3" type="AudioStream" id=2]
+[ext_resource path="res://assets/music/tempMusic.mp3" type="AudioStream" id=2]
 
 [node name="Settings" type="Control"]
 anchor_left = 0.5
@@ -15,5 +15,3 @@ __meta__ = {
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
-pitch_scale = 0.5
-autoplay = true

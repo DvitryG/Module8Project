@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" load_steps=4 format=2]
+
+[ext_resource path="res://assets/shaders/transvoxel_terrain.shader" type="Shader" id=1]
+[ext_resource path="res://assets/textures/bottom2.png" type="Texture" id=2]
+[ext_resource path="res://assets/textures/top2.png" type="Texture" id=3]
+
+[resource]
+shader = ExtResource( 1 )
+shader_param/u_transition_mask = 1
+shader_param/u_texture_top = ExtResource( 3 )
+shader_param/u_texture_sides = ExtResource( 2 )
