@@ -1,120 +1,7 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=4 format=2]
 
+[ext_resource path="res://assets/generators/world_generator.tres" type="VoxelGeneratorGraph" id=1]
 [ext_resource path="res://assets/materials/transvoxel_terrain_material.tres" type="Material" id=2]
-
-[sub_resource type="FastNoiseLite" id=1]
-seed = 1
-
-[sub_resource type="FastNoiseLite" id=2]
-
-[sub_resource type="FastNoiseLite" id=3]
-noise_type = 2
-
-[sub_resource type="VoxelGeneratorGraph" id=4]
-graph_data = {
-"connections": [ [ 65, 0, 2, 0 ], [ 1, 0, 28, 0 ], [ 1, 0, 56, 0 ], [ 1, 0, 62, 0 ], [ 10, 0, 59, 1 ], [ 19, 0, 11, 0 ], [ 19, 0, 11, 1 ], [ 11, 0, 20, 0 ], [ 20, 0, 21, 0 ], [ 21, 0, 10, 1 ], [ 22, 0, 23, 0 ], [ 23, 0, 10, 0 ], [ 27, 0, 29, 0 ], [ 28, 0, 30, 0 ], [ 29, 0, 28, 1 ], [ 29, 0, 56, 1 ], [ 30, 0, 59, 0 ], [ 6, 0, 27, 0 ], [ 6, 0, 19, 0 ], [ 6, 0, 60, 0 ], [ 7, 0, 27, 1 ], [ 7, 0, 19, 1 ], [ 7, 0, 60, 1 ], [ 56, 0, 22, 0 ], [ 56, 0, 22, 1 ], [ 59, 0, 65, 1 ], [ 60, 0, 61, 0 ], [ 61, 0, 62, 1 ], [ 62, 0, 63, 0 ], [ 63, 0, 65, 0 ] ],
-"nodes": {
-"1": {
-"gui_position": Vector2( -1260, 240 ),
-"type": "InputY"
-},
-"10": {
-"gui_position": Vector2( -240, 660 ),
-"type": "Add"
-},
-"11": {
-"gui_position": Vector2( -660, 780 ),
-"type": "Multiply"
-},
-"19": {
-"gui_position": Vector2( -840, 780 ),
-"noise": SubResource( 1 ),
-"type": "FastNoise2D"
-},
-"2": {
-"gui_position": Vector2( 380, 400 ),
-"type": "OutputSDF"
-},
-"20": {
-"b": 10.0,
-"gui_position": Vector2( -520, 780 ),
-"type": "Multiply"
-},
-"21": {
-"b": 1.0,
-"gui_position": Vector2( -380, 780 ),
-"type": "Subtract"
-},
-"22": {
-"gui_position": Vector2( -660, 660 ),
-"type": "Multiply"
-},
-"23": {
-"b": 0.1,
-"gui_position": Vector2( -520, 660 ),
-"type": "Multiply"
-},
-"27": {
-"gui_position": Vector2( -1680, 420 ),
-"noise": SubResource( 2 ),
-"type": "FastNoise2D"
-},
-"28": {
-"gui_position": Vector2( -1380, 380 ),
-"type": "Add"
-},
-"29": {
-"b": 5.0,
-"gui_position": Vector2( -1520, 420 ),
-"type": "Multiply"
-},
-"30": {
-"b": 0.0,
-"gui_position": Vector2( -1260, 380 ),
-"type": "Subtract"
-},
-"56": {
-"gui_position": Vector2( -820, 660 ),
-"type": "Add"
-},
-"59": {
-"gui_position": Vector2( -120, 480 ),
-"smoothness": 0.0,
-"type": "SdfSmoothSubtract"
-},
-"6": {
-"gui_position": Vector2( -1260, 620 ),
-"type": "InputX"
-},
-"60": {
-"gui_position": Vector2( -820, 320 ),
-"noise": SubResource( 3 ),
-"type": "FastNoise2D"
-},
-"61": {
-"b": -64.0,
-"gui_position": Vector2( -620, 320 ),
-"type": "Multiply"
-},
-"62": {
-"gui_position": Vector2( -440, 280 ),
-"type": "Add"
-},
-"63": {
-"b": 48.0,
-"gui_position": Vector2( -300, 280 ),
-"type": "Subtract"
-},
-"65": {
-"gui_position": Vector2( -80, 320 ),
-"type": "Min"
-},
-"7": {
-"gui_position": Vector2( -1260, 800 ),
-"type": "InputZ"
-}
-}
-}
 
 [sub_resource type="VoxelMesherTransvoxel" id=5]
 
@@ -125,13 +12,13 @@ transform = Transform( 0.519893, -0.450477, 0.725797, -0.249622, 0.732448, 0.633
 shadow_enabled = true
 
 [node name="VoxelLodTerrain" type="VoxelLodTerrain" parent="."]
-generator = SubResource( 4 )
+generator = ExtResource( 1 )
 mesher = SubResource( 5 )
+view_distance = 64
 material = ExtResource( 2 )
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( 0.998006, 0.0586775, 0.0232653, -0.0631215, 0.927743, 0.367844, 0, -0.368579, 0.929596, 0.519142, 35.7073, -2.23886 )
-far = 434.1
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20, 0 )
 
-[node name="VoxelViewer" type="VoxelViewer" parent="."]
-transform = Transform( 1, 0, 0, 0, 0.929596, 0.368579, 0, -0.368579, 0.929596, 0, 210.504, 0 )
+[node name="VoxelViewer" type="VoxelViewer" parent="Camera"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 4.73521e-07, -10.8329 )
