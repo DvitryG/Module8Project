@@ -1,14 +1,12 @@
 [gd_resource type="VoxelGeneratorGraph" load_steps=3 format=2]
 
-[sub_resource type="FastNoiseLite" id=2]
-
-[sub_resource type="FastNoiseLite" id=3]
-noise_type = 2
+[ext_resource path="res://assets/generators/surface_noise.tres" type="FastNoiseLite" id=1]
+[ext_resource path="res://assets/generators/mountain_noise.tres" type="FastNoiseLite" id=2]
 
 [resource]
 resource_name = "world_generator"
 graph_data = {
-"connections": [ [ 65, 0, 2, 0 ], [ 1, 0, 28, 0 ], [ 1, 0, 56, 0 ], [ 1, 0, 62, 0 ], [ 10, 0, 59, 1 ], [ 11, 0, 20, 0 ], [ 20, 0, 21, 0 ], [ 21, 0, 10, 1 ], [ 22, 0, 23, 0 ], [ 23, 0, 10, 0 ], [ 27, 0, 29, 0 ], [ 27, 0, 11, 0 ], [ 27, 0, 11, 1 ], [ 28, 0, 30, 0 ], [ 29, 0, 28, 1 ], [ 29, 0, 56, 1 ], [ 30, 0, 59, 0 ], [ 6, 0, 27, 0 ], [ 6, 0, 60, 0 ], [ 7, 0, 27, 1 ], [ 7, 0, 60, 1 ], [ 56, 0, 22, 0 ], [ 56, 0, 22, 1 ], [ 59, 0, 65, 1 ], [ 60, 0, 61, 0 ], [ 61, 0, 62, 1 ], [ 62, 0, 63, 0 ], [ 63, 0, 65, 0 ] ],
+"connections": [ [ 65, 0, 2, 0 ], [ 1, 0, 28, 0 ], [ 1, 0, 56, 0 ], [ 1, 0, 62, 0 ], [ 10, 0, 59, 1 ], [ 11, 0, 20, 0 ], [ 20, 0, 21, 0 ], [ 21, 0, 10, 1 ], [ 22, 0, 23, 0 ], [ 23, 0, 10, 0 ], [ 27, 0, 29, 0 ], [ 27, 0, 11, 0 ], [ 27, 0, 11, 1 ], [ 28, 0, 30, 0 ], [ 29, 0, 28, 1 ], [ 29, 0, 56, 1 ], [ 30, 0, 59, 0 ], [ 56, 0, 22, 0 ], [ 56, 0, 22, 1 ], [ 59, 0, 65, 1 ], [ 6, 0, 27, 0 ], [ 6, 0, 60, 0 ], [ 60, 0, 61, 0 ], [ 61, 0, 62, 1 ], [ 62, 0, 63, 0 ], [ 63, 0, 65, 0 ], [ 7, 0, 27, 1 ], [ 7, 0, 60, 1 ] ],
 "nodes": {
 "1": {
 "gui_position": Vector2( -1740, 320 ),
@@ -47,7 +45,7 @@ graph_data = {
 },
 "27": {
 "gui_position": Vector2( -1580, 460 ),
-"noise": SubResource( 2 ),
+"noise": ExtResource( 1 ),
 "type": "FastNoise2D"
 },
 "28": {
@@ -79,7 +77,7 @@ graph_data = {
 },
 "60": {
 "gui_position": Vector2( -980, 380 ),
-"noise": SubResource( 3 ),
+"noise": ExtResource( 2 ),
 "type": "FastNoise2D"
 },
 "61": {

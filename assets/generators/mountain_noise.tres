@@ -1,4 +1,8 @@
-[gd_resource type="FastNoiseLite" format=2]
+[gd_resource type="FastNoiseLite" load_steps=2 format=2]
+
+[ext_resource path="res://assets/generators/noise_seed.gd" type="Script" id=1]
 
 [resource]
 noise_type = 2
+seed = 1
+script = ExtResource( 1 )

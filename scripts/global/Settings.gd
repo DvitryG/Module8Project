@@ -2,7 +2,7 @@ extends Control
 
 # Temporary
 
-const SAVE_PATH = "res://settings.json"
+const SAVE_PATH = "res://save/settings.json"
 var settings = {}
 #var playMusic = 1
 #var playEffects = 1
@@ -24,7 +24,8 @@ var effectsMute = false
 
 var resWidth = 1920
 var resHeight = 1080
-var fullscreen = false
+var fullscreen = true
+var blur = true
 
 var keyTimePause = 32
 var keyGamePause = 16777217
@@ -80,6 +81,7 @@ func save_game():
 		},
 		
 		fullscreen = fullscreen,
+		blur = blur,
 		
 		volumeLevel = {
 			masterVolume = masterVolume,
@@ -128,6 +130,7 @@ func load_game():
 	resWidth = data['resolution']['width']
 	resHeight = data['resolution']['height']
 	fullscreen = data['fullscreen']
+	blur = data['blur']
 	
 	keyTimePause = data['keys']['keyTimePause']
 	keyGamePause = data['keys']['keyGamePause']

@@ -9,11 +9,16 @@ func _ready():
 	$MainPanel/SettingsContainer/MuVPanel/MuVSlider.connect("value_changed", self, "set_music_volume")
 	$MainPanel/SettingsContainer/EVPanel/EVSlider.connect("value_changed", self, "set_effects_volume")
 	$MainPanel/SettingsContainer/TPanel/TranslationOptions.connect("item_selected", self, "set_language")
+	$MainPanel/SettingsContainer/BlurCheck.connect("toggled", self, "blur")
+	
 	
 	add_lang_items()
 	add_resolution_items()
 	if (Settings.fullscreen):
 		$MainPanel/SettingsContainer/FullscreenCheck.pressed = true
+	
+	if (Settings.blur):
+		$MainPanel/SettingsContainer/BlurCheck.pressed = true
 	
 	$MainPanel/SettingsContainer/MaVPanel/MaVSlider.value = Settings.masterVolume
 	$MainPanel/SettingsContainer/MuVPanel/MuVSlider.value = Settings.musicVolume
@@ -105,6 +110,14 @@ func fullscreen(pressed):
 	Settings.resolution()
 	Settings.save_game()
 	
+	pass
+
+func blur(pressed):
+	if (pressed == true):
+		Settings.blur = true
+	elif (pressed == false):
+		Settings.blur = false
+	Settings.save_game()
 	pass
 
 func set_master_volume(value):

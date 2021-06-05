@@ -1,31 +1,30 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/generators/world_generator.tres" type="VoxelGeneratorGraph" id=1]
 [ext_resource path="res://assets/materials/transvoxel_terrain_material.tres" type="Material" id=2]
+[ext_resource path="res://scripts/Game.gd" type="Script" id=3]
+[ext_resource path="res://scenes/menu/PauseMenu.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/menu/SettingsMenu.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/Town.tscn" type="PackedScene" id=6]
 
-[sub_resource type="VoxelMesherTransvoxel" id=5]
+[sub_resource type="VoxelMesherTransvoxel" id=1]
 
-[sub_resource type="SpatialMaterial" id=8]
-albedo_color = Color( 0, 0, 0, 1 )
-metallic_specular = 0.0
-
-[sub_resource type="ProceduralSky" id=7]
+[sub_resource type="ProceduralSky" id=2]
 ground_bottom_color = Color( 0.647059, 0.839216, 0.945098, 1 )
 ground_horizon_color = Color( 0.839216, 0.917647, 0.980392, 1 )
 
-[sub_resource type="Environment" id=6]
-background_sky = SubResource( 7 )
+[sub_resource type="Environment" id=3]
+background_sky = SubResource( 2 )
 ambient_light_sky_contribution = 0.96
 fog_enabled = true
-fog_color = Color( 0.168627, 0.160784, 0.12549, 1 )
 auto_exposure_scale = 0.04
 auto_exposure_min_luma = 0.0
 auto_exposure_max_luma = 8.67
 auto_exposure_speed = 0.01
-dof_blur_far_enabled = true
 dof_blur_far_distance = 32.0
 
 [node name="Main" type="Node"]
+script = ExtResource( 3 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 0.519893, -0.450477, 0.725797, -0.249622, 0.732448, 0.633411, -0.816946, -0.510481, 0.268346, 0, 258.635, 0 )
@@ -33,21 +32,18 @@ shadow_enabled = true
 
 [node name="VoxelLodTerrain" type="VoxelLodTerrain" parent="."]
 generator = ExtResource( 1 )
-mesher = SubResource( 5 )
+mesher = SubResource( 1 )
 view_distance = 64
 material = ExtResource( 2 )
 
-[node name="Camera" type="Camera" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15, 0 )
-
-[node name="VoxelViewer" type="VoxelViewer" parent="Camera"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 4.73521e-07, -10.8329 )
-
-[node name="CSGSphere" type="CSGSphere" parent="Camera"]
-cast_shadow = 0
-invert_faces = true
-radius = 100.0
-material = SubResource( 8 )
+[node name="Town" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.87882, 0 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 6 )
+environment = SubResource( 3 )
+
+[node name="SettingsMenu" parent="." instance=ExtResource( 5 )]
+visible = false
+
+[node name="Pause" parent="." instance=ExtResource( 4 )]
+visible = false

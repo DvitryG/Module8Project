@@ -68,10 +68,16 @@ margin_right = 1006.0
 margin_bottom = 155.0
 text = "FULLSCREEN"
 
-[node name="MaVPanel" type="Panel" parent="MainPanel/SettingsContainer"]
+[node name="BlurCheck" type="CheckBox" parent="MainPanel/SettingsContainer"]
 margin_top = 159.0
 margin_right = 1006.0
 margin_bottom = 208.0
+text = "BLUR"
+
+[node name="MaVPanel" type="Panel" parent="MainPanel/SettingsContainer"]
+margin_top = 212.0
+margin_right = 1006.0
+margin_bottom = 261.0
 rect_min_size = Vector2( 0, 49 )
 
 [node name="MaVLabel" type="Label" parent="MainPanel/SettingsContainer/MaVPanel"]
@@ -99,9 +105,9 @@ __meta__ = {
 }
 
 [node name="MuVPanel" type="Panel" parent="MainPanel/SettingsContainer"]
-margin_top = 212.0
+margin_top = 265.0
 margin_right = 1006.0
-margin_bottom = 261.0
+margin_bottom = 314.0
 rect_min_size = Vector2( 0, 49 )
 
 [node name="MuVeLabel" type="Label" parent="MainPanel/SettingsContainer/MuVPanel"]
@@ -129,9 +135,9 @@ __meta__ = {
 }
 
 [node name="EVPanel" type="Panel" parent="MainPanel/SettingsContainer"]
-margin_top = 265.0
+margin_top = 318.0
 margin_right = 1006.0
-margin_bottom = 314.0
+margin_bottom = 367.0
 rect_min_size = Vector2( 0, 49 )
 
 [node name="EVLabel" type="Label" parent="MainPanel/SettingsContainer/EVPanel"]

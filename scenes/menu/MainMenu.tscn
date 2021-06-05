@@ -58,6 +58,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="ContinueButton" type="Button" parent="MainPanel/OptionButtons"]
+visible = false
+margin_right = 232.0
+margin_bottom = 49.0
+text = "CONTINUE_GAME"
+
 [node name="StartButton" type="Button" parent="MainPanel/OptionButtons"]
 margin_right = 232.0
 margin_bottom = 49.0
