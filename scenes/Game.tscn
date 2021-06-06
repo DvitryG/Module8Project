@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/generators/world_generator.tres" type="VoxelGeneratorGraph" id=1]
 [ext_resource path="res://assets/materials/transvoxel_terrain_material.tres" type="Material" id=2]
@@ -9,12 +9,16 @@
 
 [sub_resource type="VoxelMesherTransvoxel" id=1]
 
-[sub_resource type="ProceduralSky" id=2]
+[sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 0, 0, 0, 1 )
+metallic_specular = 0.0
+
+[sub_resource type="ProceduralSky" id=3]
 ground_bottom_color = Color( 0.647059, 0.839216, 0.945098, 1 )
 ground_horizon_color = Color( 0.839216, 0.917647, 0.980392, 1 )
 
-[sub_resource type="Environment" id=3]
-background_sky = SubResource( 2 )
+[sub_resource type="Environment" id=4]
+background_sky = SubResource( 3 )
 ambient_light_sky_contribution = 0.96
 fog_enabled = true
 auto_exposure_scale = 0.04
@@ -38,12 +42,25 @@ material = ExtResource( 2 )
 
 [node name="Town" parent="." instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.87882, 0 )
+input_ray_pickable = false
+speed = 100.0
+
+[node name="Camera" type="Camera" parent="Town"]
+transform = Transform( -1, 2.97541e-08, -8.22036e-08, 0, 0.9403, 0.340347, 8.74228e-08, 0.340347, -0.9403, 0, 4.92461, -7.85563 )
+
+[node name="VoxelViewer" type="VoxelViewer" parent="Town/Camera"]
+
+[node name="CSGSphere" type="CSGSphere" parent="Town/Camera"]
+cast_shadow = 0
+invert_faces = true
+radius = 100.0
+material = SubResource( 2 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 3 )
-
-[node name="SettingsMenu" parent="." instance=ExtResource( 5 )]
-visible = false
+environment = SubResource( 4 )
 
 [node name="Pause" parent="." instance=ExtResource( 4 )]
+visible = false
+
+[node name="SettingsMenu" parent="." instance=ExtResource( 5 )]
 visible = false

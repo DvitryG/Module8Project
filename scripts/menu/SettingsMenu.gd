@@ -27,8 +27,7 @@ func _ready():
 	pass
 
 func back():
-	# пока только в главное меню
-	get_tree().change_scene("res://scenes/menu/MainMenu.tscn") 
+	self.visible = false
 	pass
 
 func add_lang_items():

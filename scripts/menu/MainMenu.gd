@@ -15,6 +15,7 @@ func _ready():
 
 func start_new_game():
 	# Сброс и генерация файлов сохранения
+	GameData.mainData.worldSeed = 2
 	get_tree().change_scene("res://scenes/Game.tscn")
 	pass
 
@@ -23,7 +24,7 @@ func continue_game():
 	pass
 
 func open_settings():
-	get_tree().change_scene("res://scenes/menu/SettingsMenu.tscn")
+	$SettingsMenu.visible = true
 	pass
 
 func exit_game():

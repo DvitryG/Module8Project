@@ -1,27 +1,61 @@
 using Godot;
 using System;
 
-public class Town : KinematicBody
+public class Town : VehicleBody
 {
-	Vector3 gravity = Vector3.Down * 10;
-	int speed = 4;
+
+
+	[Export]
+	float speed = 4;
+
+	[Export]
 	double rotationSpeed = 0.85;
 
-	Vector3 velocity = Vector3.Zero;
-	
-	void _physicsProcess(int delta)
-    {
-
-    } 
-	
-	/*public override void _Ready()
+	public override void _PhysicsProcess(float delta)
 	{
-		
-	}*/
+		float needSpeed = 0;
+		double needRotSpeed = 0;
 
-//  // Called every frame. 'delta' is the elapsed time since the previous frame.
-//  public override void _Process(float delta)
-//  {
-//      
-//  }
+		if (Input.IsActionPressed("forward_move"))
+		{
+			needSpeed = speed;
+		}
+		if (Input.IsActionPressed("back_move"))
+		{
+			needSpeed = -speed;
+		}
+		if (Input.IsActionPressed("right_move"))
+		{
+			needRotSpeed = rotationSpeed;
+		}
+		if (Input.IsActionPressed("left_move"))
+		{
+			needRotSpeed = -rotationSpeed;
+		}
+		speed = Mathf.Lerp(speed, needSpeed, 0.1f);
+		EngineForce = speed;
+		/*if (needSpeed > 0)
+        {
+			speed = Mathf.Lerp(speed, needSpeed, 0.1f);
+			EngineForce = speed;
+		}*/
+	}
+	
+	void getInput(float delta)
+	{
+		if (Input.IsActionPressed("forward_move")) {
+
+		}
+		if (Input.IsActionPressed("back_move")) {
+
+		}
+		if (Input.IsActionPressed("right_move")) {
+
+		}
+		if (Input.IsActionPressed("left_move")) {
+
+		}
+	}
+
 }
+
