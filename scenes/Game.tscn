@@ -43,7 +43,7 @@ material = ExtResource( 2 )
 [node name="Town" parent="." instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.87882, 0 )
 input_ray_pickable = false
-speed = 100.0
+mass = 8.0
 
 [node name="Camera" type="Camera" parent="Town"]
 transform = Transform( -1, 2.97541e-08, -8.22036e-08, 0, 0.9403, 0.340347, 8.74228e-08, 0.340347, -0.9403, 0, 4.92461, -7.85563 )

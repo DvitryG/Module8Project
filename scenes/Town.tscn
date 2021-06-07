@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://scripts/TrackedRaycastVehicleController.gd" type="Script" id=1]
-[ext_resource path="res://scripts/RaycastDriver.gd" type="Script" id=2]
+[ext_resource path="res://scripts/Town.cs" type="Script" id=1]
+[ext_resource path="res://scripts/RaycastDriver.cs" type="Script" id=3]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 2, 1, 2 )
@@ -12,13 +12,10 @@ extents = Vector3( 2, 1, 2 )
 albedo_color = Color( 0.486275, 0.486275, 0.486275, 1 )
 metallic_specular = 0.0
 
-[sub_resource type="PrismMesh" id=5]
+[sub_resource type="PrismMesh" id=4]
 
 [node name="Town" type="RigidBody"]
-mass = 10.0
 script = ExtResource( 1 )
-enginePower = 250.0
-engineSpeedScaleFac = 22.0
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 2, 0, 2, 0 )
@@ -31,29 +28,61 @@ material/0 = SubResource( 3 )
 
 [node name="MeshInstance2" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.57107, 2.37558 )
-mesh = SubResource( 5 )
+mesh = SubResource( 4 )
 material/0 = null
 
 [node name="Lray1" type="RayCast" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8, 1.2, 3.8 )
 enabled = true
 cast_to = Vector3( 0, -0.65, 0 )
-script = ExtResource( 2 )
+script = ExtResource( 3 )
+Ztraction = 1.0
 
 [node name="Lray2" type="RayCast" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8, 1.2, 1.8 )
+enabled = true
+cast_to = Vector3( 0, -0.65, 0 )
+script = ExtResource( 3 )
+Ztraction = 1.0
+
+[node name="Lray3" type="RayCast" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8, 1.2, -1.8 )
+enabled = true
+cast_to = Vector3( 0, -0.65, 0 )
+script = ExtResource( 3 )
+Ztraction = 1.0
+
+[node name="Lray4" type="RayCast" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8, 1.2, -3.8 )
 enabled = true
 cast_to = Vector3( 0, -0.65, 0 )
-script = ExtResource( 2 )
+script = ExtResource( 3 )
+Ztraction = 1.0
 
 [node name="Rray1" type="RayCast" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8, 1.2, 3.8 )
 enabled = true
 cast_to = Vector3( 0, -0.65, 0 )
-script = ExtResource( 2 )
+script = ExtResource( 3 )
+Ztraction = 1.0
 
 [node name="Rray2" type="RayCast" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8, 1.2, 1.8 )
+enabled = true
+cast_to = Vector3( 0, -0.65, 0 )
+script = ExtResource( 3 )
+Ztraction = 1.0
+
+[node name="Rray3" type="RayCast" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8, 1.2, -1.8 )
+enabled = true
+cast_to = Vector3( 0, -0.65, 0 )
+script = ExtResource( 3 )
+Ztraction = 1.0
+
+[node name="Rray4" type="RayCast" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8, 1.2, -3.8 )
 enabled = true
 cast_to = Vector3( 0, -0.65, 0 )
-script = ExtResource( 2 )
+script = ExtResource( 3 )
+Ztraction = 1.0

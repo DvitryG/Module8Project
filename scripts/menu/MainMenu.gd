@@ -15,7 +15,7 @@ func _ready():
 
 func start_new_game():
 	# Сброс и генерация файлов сохранения
-	GameData.mainData.worldSeed = 2
+	GameData.mainData.worldSeed = 1
 	get_tree().change_scene("res://scenes/Game.tscn")
 	pass
 
