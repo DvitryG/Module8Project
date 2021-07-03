@@ -14,6 +14,8 @@ func _ready():
 func _process(delta):
 	if (Input.is_action_just_pressed("ui_cancel")):
 		continue_game()
+	GameData.mainData.xPos = $M113.get_global_transform().origin.x
+	GameData.mainData.yPos = $M113.get_global_transform().origin.y
 	pass
 
 
@@ -30,11 +32,15 @@ func gen_world():
 
 func continue_game():
 	if (pause == true):
-		pause = false
+		if ($SettingsMenu.visible == true):
+			$SettingsMenu.visible = false
+		else:
+			pause = false
 	else:
 		pause = true
 	$Pause.visible = pause
 	settings()
+	get_tree().paused = pause
 	pass
 
 func open_settings():
@@ -43,4 +49,5 @@ func open_settings():
 
 func exit_game():
 	get_tree().change_scene("res://scenes/menu/MainMenu.tscn")
+	get_tree().paused = false
 	pass

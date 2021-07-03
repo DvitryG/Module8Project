@@ -12,3 +12,9 @@ MUSIC_VOLUME,Громкость музыки:,Music Volume:
 EFFECTS_VOLUME,Громкость эффектов:,Effects Volume:
 LANGUAGE,Язык:,Language:
 BLUR,Размытие,Blurring
+HEALTH,Здоровье:,Health:
+PETROL,Бензин:,Petrol:
+SCORE,Очки:,Score:
+HEALTH_FIN,"Ты же ищешь, упорствуешь, пытаешься? или ты окочательно отчаился?","Are you looking, persevering, trying, or are you completely discouraged?"
+PETROL_FIN,"Вы когда-нибудь пробовали двигаться куда нибудь без без ресурса? Вы знаете, что это невозможно, но вы продолжаете упорствовать. Порой мы видим перед собой недежду, то, что кажется нам выходом и тем самым ресурсом, но это не так...","Have you ever tried to move anywhere without a resource? You know it's impossible, but you persist. Sometimes we see what seems to be a way out and a resource in front of us, but it's not..."
+SCORE_FIN,"Мы продолжаем двигаться, не имея четкой цели, продолжаем упорствовать, зная исход. Каково это, достигать своих целей? Если ты хочешь, я могу дать тебе бесконечный ресурс, но стоит ли оно того? Не обесценит ли это твой труд?","We keep moving without a clear goal, we keep persisting, knowing the outcome. What does it feel like to reach your goals? If you want, I can give you an endless resource, but is it worth it? Won't it devalue your hard work?"

@@ -1,0 +1,131 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://style/default_theme.tres" type="Theme" id=1]
+[ext_resource path="res://scripts/GamePanel.gd" type="Script" id=2]
+
+[node name="GamePanel" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Score" type="Panel" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -153.0
+margin_top = -47.0
+rect_pivot_offset = Vector2( -1648.69, -380.555 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Text" type="Label" parent="Score"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 6.0
+margin_top = 6.0
+margin_right = -105.0
+margin_bottom = -6.0
+text = "SCORE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Count" type="Label" parent="Score"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 85.0
+margin_top = 6.0
+margin_right = -6.0
+margin_bottom = -6.0
+text = "0"
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Petrol" type="Panel" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -47.0
+margin_right = 153.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Text" type="Label" parent="Petrol"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 6.0
+margin_top = 6.0
+margin_right = -105.0
+margin_bottom = -6.0
+text = "PETROL"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Count" type="Label" parent="Petrol"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 85.0
+margin_top = 6.0
+margin_right = -6.0
+margin_bottom = -6.0
+text = "100"
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Health" type="Panel" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -94.0
+margin_right = 153.0
+margin_bottom = -47.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Text" type="Label" parent="Health"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 6.0
+margin_top = 6.0
+margin_right = -105.0
+margin_bottom = -6.0
+text = "HEALTH"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Count" type="Label" parent="Health"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 85.0
+margin_top = 6.0
+margin_right = -6.0
+margin_bottom = -6.0
+text = "100"
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FinLabel" type="Label" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -0.353546
+margin_bottom = -0.353516
+text = "test text"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}

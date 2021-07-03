@@ -5,22 +5,26 @@ const CITIZENS_SAVE_PATH = "res://save/game/citizensData.json"
 const BUILDINGS_SAVE_PATH = "res://save/game/buildingsData.json"
 
 var mainData = {
-	gameCreated = true,
+	gameCreated = false,
 	xPos = 0,
 	yPos = 0,
 	angle = 0,
-	worldSeed = 0
+	worldSeed = 0,
+	score = 0,
+	health = 100,
+	petrol = 100,
+	infiniteMod = false
 }
 
-var citizensData = {}
+#var citizensData = {}
 
-var buildingsData = {}
+#var buildingsData = {}
  
 
 func _ready():
 	mainData = load_game(mainData, MAIN_SAVE_PATH)
-	citizensData = load_game(citizensData, CITIZENS_SAVE_PATH)
-	buildingsData = load_game(buildingsData, BUILDINGS_SAVE_PATH)
+#	citizensData = load_game(citizensData, CITIZENS_SAVE_PATH)
+#	buildingsData = load_game(buildingsData, BUILDINGS_SAVE_PATH)
 	pass 
 
 func get_seed():
